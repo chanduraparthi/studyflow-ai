@@ -60,7 +60,7 @@ const WhatWeDoSection = () => {
                             <span className="gradient-text">Study Companion</span>
                         </h2>
                         <p className="text-base leading-relaxed text-slate-600 mb-7 max-w-lg">
-                            StudyFlow combines document management, AI intelligence, and interactive learning tools to help you understand faster, retain longer, and study smarter.
+                            chandu's AI combines document management, AI intelligence, and interactive learning tools to help you understand faster, retain longer, and study smarter.
                         </p>
 
                         {/* Feature bullets */}

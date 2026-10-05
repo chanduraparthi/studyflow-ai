@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/StudyFlow-AI%20Learning%20Platform-10B981?style=for-the-badge&logo=bookstack&logoColor=white" alt="StudyFlow" />
+  <img src="https://img.shields.io/badge/chandu's%20AI-AI%20Learning%20Platform-10B981?style=for-the-badge&logo=bookstack&logoColor=white" alt="chandu's AI" />
 </p>
 
-<h1 align="center">📚 StudyFlow — AI-Powered Document Learning Platform</h1>
+<h1 align="center">📚 chandu's AI — AI-Powered Document Learning Platform</h1>
 
 <p align="center">
   <strong>Upload PDFs. Generate Flashcards & Quizzes. Chat with AI. Track Progress.</strong><br/>
@@ -22,7 +22,7 @@
 
 ---
 
-## 🌐 Live Demo - https://studyflow-ai-jade.vercel.app/
+## 🌐 Live Demo - https://chandus-ai.vercel.app/
 ---
 
 ## ✨ Features
@@ -157,7 +157,7 @@ Response returned to frontend
 ## 📁 Project Structure
 
 ```
-StudyFlow_FullStack_Project_MERN/
+chandus_AI_FullStack_Project_MERN/
 │
 ├── backend/
 │   ├── server.js                   # Express app entry point & Vercel export
@@ -426,7 +426,7 @@ PORT=5000
 FRONTEND_URL=http://localhost:5173
 
 # Database
-MONGODB_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/studyflow
+MONGODB_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/chandus_ai
 
 # JWT
 JWT_SECRET=your_jwt_secret_key_here
@@ -470,8 +470,8 @@ VITE_GOOGLE_CLIENT_ID=your_google_client_id.apps.googleusercontent.com
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/StudyFlow_FullStack_Project_MERN.git
-cd StudyFlow_FullStack_Project_MERN
+git clone https://github.com/your-username/chandus_AI_FullStack_Project_MERN.git
+cd chandus_AI_FullStack_Project_MERN
 ```
 
 ### 2. Setup Backend
@@ -516,7 +516,7 @@ The frontend runs on **http://localhost:5173** by default.
 1. Create a free [Cloudinary account](https://cloudinary.com/)
 2. From the **Cloudinary Dashboard**, copy your **Cloud Name**, **API Key**, and **API Secret**
 3. Add them to your backend `.env` file
-4. When you upload PDFs, they will be stored in the `studyflow/documents/` folder in your Cloudinary Media Library
+4. When you upload PDFs, they will be stored in the `chandus_ai/documents/` folder in your Cloudinary Media Library
 
 ---
 
@@ -537,7 +537,7 @@ Both the frontend and backend are configured for **Vercel** serverless deploymen
 1. Push the `frontend/` folder to a GitHub repository
 2. Import in **Vercel** → set **Root Directory** to `frontend`
 3. Set **Environment Variables**:
-   - `VITE_API_URL` = your deployed backend URL (e.g., `https://studyflow-api.vercel.app`)
+   - `VITE_API_URL` = your deployed backend URL (e.g., `https://chandus-ai-api.vercel.app`)
    - `VITE_GOOGLE_CLIENT_ID` = your Google Client ID
 4. Set **Framework Preset** to **Vite**
 5. The `vercel.json` handles SPA fallback routing for all client-side routes

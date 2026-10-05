@@ -55,7 +55,7 @@ const retryWithBackoff = async (fn, maxRetries = 3, baseDelay = 1000) => {
 const generateWithRetry = async (prompt) => {
     const response = await retryWithBackoff(() =>
         getAI().models.generateContent({
-            model: "gemini-2.5-flash-lite",
+            model: "gemini-3.5-flash-lite",
             contents: prompt,
         })
     );

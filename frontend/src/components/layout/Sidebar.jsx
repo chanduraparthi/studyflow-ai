@@ -52,7 +52,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
         {/* Logo and Close button for mobile */}
         <div className='flex items-center justify-between px-5 h-16 border-b border-slate-200/60'>
           <div className='flex items-center gap-3'>
-            <img src="/logo1.svg" alt="logo" />
+            <img src="/logo1.svg" alt="chandu's AI" className="h-8 w-auto" />
           </div>
           <button
             onClick={toggleSidebar}

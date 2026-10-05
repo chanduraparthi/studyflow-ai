@@ -17,7 +17,7 @@ const uploadToCloudinary = (buffer, originalName) => {
         const stream = getCloudinary().uploader.upload_stream(
             {
                 resource_type: "image",              // deliver PDFs via image pipeline (browser-viewable)
-                folder: "studyflow/documents",       // organized folder
+                folder: "chandus_ai/documents",       // organized folder
                 public_id: `${Date.now()}-${originalName.replace(/\.[^/.]+$/, "")}`,
                 format: "pdf",
             },

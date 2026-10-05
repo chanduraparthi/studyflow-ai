@@ -1,18 +1,18 @@
-import { Dribbble, Linkedin, Twitter, Youtube, BrainCircuitIcon, Github } from "lucide-react";
+import { Dribbble, Linkedin, Twitter, Youtube, BrainCircuitIcon, Github, Instagram } from "lucide-react";
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const columns = [
         { title: 'Product', links: [{ text: 'Features', href: '#features' }, { text: 'Pricing', href: '#pricing' }, { text: 'Docs', href: '#docs' }, { text: 'Security', href: '#' }] },
         { title: 'Resources', links: [{ text: 'API', href: '#' }, { text: 'Blog', href: '#' }, { text: 'Support', href: '#' }] },
-        { title: 'Contact', links: [{ text: 'support@studyflow.ai', href: 'mailto:support@studyflow.ai' }] },
+        { title: 'Contact', links: [{ text: 'support@chandusai.com', href: 'mailto:support@chandusai.com' }] },
     ];
 
     const socials = [
-        { icon: Twitter, href: 'https://x.com/_alok_h' },
-        { icon: Linkedin, href: 'https://www.linkedin.com/in/alok-hotta/' },
-        { icon: Youtube, href: 'https://www.youtube.com/@studyflow_ai' },
-        { icon: Github, href: 'https://github.com/iamalok123' },
+        { icon: Twitter, href: 'https://x.com/urstruychanduMB' },
+        { icon: Linkedin, href: 'https://www.linkedin.com/in/chandu-raparthi-771438359/' },
+        { icon: Instagram, href: 'https://www.instagram.com/_chandu_mb' },
+        { icon: Github, href: 'https://github.com/chanduraparthi' },
     ];
 
     return (
@@ -21,9 +21,9 @@ const Footer = () => {
                 <div className="w-full md:w-[35%] md:pr-6">
                     <Link to="/" className="flex items-center gap-2 mb-5 group">
                         <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-linear-to-br from-emerald-400 to-teal-500 shadow-sm shadow-emerald-500/20">
-                            <img src="logo2.svg" alt="logo" className='w-16 h-16' />
+                            <img src="/logo2.svg" alt="chandu's AI" className='w-16 h-16' />
                         </div>
-                        <span className='font-bold text-lg text-slate-900 tracking-tight'>StudyFlow</span>
+                        <span className='font-bold text-lg text-slate-900 tracking-tight'>chandu's AI</span>
                     </Link>
                     <p className="text-sm leading-relaxed mb-6 max-w-xs text-slate-500">AI-powered document learning assistant built with MERN & Google Gemini.</p>
                     <div className="flex items-center gap-2.5">
@@ -48,7 +48,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="max-w-[1200px] mx-auto pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-500">
-                <p>© 2026 StudyFlow. All rights reserved.</p>
+                <p>© 2026 chandu's AI. All rights reserved.</p>
                 <div className="flex gap-5">
                     <a href="#" className="hover:text-emerald-600 transition-colors font-medium">Privacy Policy</a>
                     <a href="#" className="hover:text-emerald-600 transition-colors font-medium">Terms of Service</a>

@@ -20,8 +20,8 @@ connectDB();
 
 // Middleware to handle CORS
 const allowedOrigins = process.env.FRONTEND_URL
-  ? [process.env.FRONTEND_URL, "http://localhost:5173"]
-  : ["http://localhost:5173", "http://localhost:3000"];
+  ? [process.env.FRONTEND_URL, "http://localhost:5174"]
+  : ["http://localhost:5174", "http://localhost:3000"];
 
 app.use(
   cors({
@@ -45,7 +45,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Health check
 app.get('/', (req, res) => {
-  res.json({ success: true, message: 'StudyFlow API is running' });
+  res.json({ success: true, message: "chandu's AI API is running" });
 });
 
 // Routes

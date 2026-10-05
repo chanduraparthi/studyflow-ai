@@ -52,7 +52,7 @@ const FeaturesGrid = () => {
                 <div className="text-center mb-14 animate-fade-in-up">
                     <span className="inline-block text-xs font-bold text-emerald-700 uppercase tracking-[0.2em] mb-3 px-3 py-1 bg-emerald-100 rounded-full">Features</span>
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ fontFamily: 'Urbanist, sans-serif', letterSpacing: '-0.02em' }}>
-                        Why Choose StudyFlow
+                        Why Choose chandu's AI
                     </h2>
                     <p className="text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
                         Everything you need to turn static documents into an interactive, AI-powered learning experience.

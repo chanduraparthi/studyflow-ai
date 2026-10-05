@@ -62,7 +62,7 @@ const LoginPage = () => {
           {/* Header */}
           <div className='text-center mb-10'>
             <div className='inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-linear-to-br from-emerald-500 to-teal-500 shadow-lg shadow-emerald-500/25 mb-4'>
-              <img src="/logo2.svg" alt="logo2" />
+              <img src="/logo2.svg" alt="chandu's AI" />
             </div>
             <h1 className='text-2xl font-medium text-slate-900 tracking-tight mb-2'>
               Welcome back

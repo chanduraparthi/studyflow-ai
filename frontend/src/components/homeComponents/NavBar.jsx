@@ -31,9 +31,9 @@ const NavBar = () => {
             <nav className='fixed top-4 left-1/2 -translate-x-1/2 z-50 flex w-[calc(100%-2rem)] max-w-[1200px] items-center justify-between bg-white/40 px-5 py-3.5 backdrop-blur-2xl border border-white/50 shadow-sm rounded-2xl transition-all duration-300'>
                 <a href='/' className='flex items-center gap-2.5 group'>
                     <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-linear-to-br from-emerald-400 to-teal-500 shadow-sm shadow-emerald-500/20 group-hover:shadow-md group-hover:shadow-emerald-500/30 transition-all">
-                        <img src="logo2.svg" alt="logo" className='w-16 h-16' />
+                        <img src="/logo2.svg" alt="chandu's AI" className='w-16 h-16' />
                     </div>
-                    <span className='font-bold text-lg text-slate-800 tracking-tight'>StudyFlow</span>
+                    <span className='font-bold text-lg text-slate-800 tracking-tight'>chandu's AI</span>
                 </a>
 
                 <div className='hidden items-center gap-8 font-medium text-slate-600 md:flex text-[0.85rem]'>
@@ -72,9 +72,9 @@ const NavBar = () => {
             <div className={`fixed inset-0 z-60 flex flex-col items-center justify-center gap-6 bg-slate-900/40 text-lg font-medium backdrop-blur-3xl transition-all duration-500 md:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                 <div className="absolute top-6 left-6 flex items-center gap-2.5">
                     <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-linear-to-br from-emerald-400 to-teal-500 shadow-sm shadow-emerald-500/20">
-                        <img src="logo2.svg" alt="logo" />
+                        <img src="/logo2.svg" alt="chandu's AI" />
                     </div>
-                    <span className='font-bold text-lg text-white tracking-tight'>StudyFlow</span>
+                    <span className='font-bold text-lg text-white tracking-tight'>chandu's AI</span>
                 </div>
 
                 {links.map((link, idx) => (

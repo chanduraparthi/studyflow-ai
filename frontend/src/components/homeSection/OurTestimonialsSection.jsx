@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const testimonials = [
     {
-        quote: "StudyFlow completely changed how I prepare for exams. The AI flashcards and quizzes save me hours every week.",
+        quote: "chandu's AI completely changed how I prepare for exams. The AI flashcards and quizzes save me hours every week.",
         name: "Riya Sharma",
         role: "Computer Science Student",
         initials: "RS",
@@ -44,7 +44,7 @@ const OurTestimonialsSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3 text-center" style={{ fontFamily: 'Urbanist, sans-serif', letterSpacing: '-0.02em' }}>
                     What Our Users Say
                 </h2>
-                <p className="text-base text-slate-600 mb-14 text-center max-w-md">Real feedback from students and professionals using StudyFlow every day.</p>
+                <p className="text-base text-slate-600 mb-14 text-center max-w-md">Real feedback from students and professionals using chandu's AI every day.</p>
 
                 <div className="relative w-full max-w-2xl">
                     {/* Main testimonial card */}

@@ -134,7 +134,7 @@ const HeroSection = () => {
 
                     {/* Center badge */}
                     <div className="bg-white/90 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg border border-slate-200 text-center">
-                        <p className="text-sm font-bold text-slate-800">StudyFlow</p>
+                        <p className="text-sm font-bold text-slate-800">chandu's AI</p>
                         <p className="text-[11px] text-slate-500 font-medium mt-0.5">AI Learning Engine</p>
                         <div className="flex gap-1 justify-center mt-2">
                             <span className="size-1.5 rounded-full bg-emerald-400" />
