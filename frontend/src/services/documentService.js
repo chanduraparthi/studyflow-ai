@@ -6,20 +6,26 @@ const getDocuments = async () => {
     const response = await axiosInstance.get(API_PATHS.DOCUMENTS.GET_DOCUMENTS);
     return response.data?.data;
   } catch (error) {
-    throw error.response?.data || { message: 'Failed to fetch documents' };
+    const message =
+      error.response?.data?.error ||
+      error.response?.data?.message ||
+      error.message ||
+      'Failed to fetch documents';
+    throw { message, error: message, ...(error.response?.data || {}) };
   }
 };
 
 const uploadDocument = async (formData) => {
   try {
-    const response = await axiosInstance.post(API_PATHS.DOCUMENTS.UPLOAD, formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
+    const response = await axiosInstance.post(API_PATHS.DOCUMENTS.UPLOAD, formData);
     return response.data;
   } catch (error) {
-    throw error.response?.data || { message: 'Failed to upload document' };
+    const message =
+      error.response?.data?.error ||
+      error.response?.data?.message ||
+      error.message ||
+      'Failed to upload document';
+    throw { message, error: message, ...(error.response?.data || {}) };
   }
 };
 
@@ -28,7 +34,12 @@ const deleteDocument = async (id) => {
     const response = await axiosInstance.delete(API_PATHS.DOCUMENTS.DELETE_DOCUMENT(id));
     return response.data;
   } catch (error) {
-    throw error.response?.data || { message: 'Failed to delete document' };
+    const message =
+      error.response?.data?.error ||
+      error.response?.data?.message ||
+      error.message ||
+      'Failed to delete document';
+    throw { message, error: message, ...(error.response?.data || {}) };
   }
 };
 
@@ -37,7 +48,12 @@ const getDocumentById = async (id) => {
     const response = await axiosInstance.get(API_PATHS.DOCUMENTS.GET_DOCUMENT_BY_ID(id));
     return response.data;
   } catch (error) {
-    throw error.response?.data || { message: 'Failed to fetch document details' };
+    const message =
+      error.response?.data?.error ||
+      error.response?.data?.message ||
+      error.message ||
+      'Failed to fetch document details';
+    throw { message, error: message, ...(error.response?.data || {}) };
   }
 };
 

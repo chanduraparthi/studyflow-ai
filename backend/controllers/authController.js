@@ -295,11 +295,18 @@ export const googleLogin = async (req, res, next) => {
                 await user.save();
             } else {
                 // Create new Google user
-                // Generate a unique username from the Google name
-                let username = name.replace(/\s+/g, '').toLowerCase();
+                // Generate a unique username from the Google name (min 3 chars required)
+                let baseName = name ? name.replace(/[^a-zA-Z0-9]/g, '').toLowerCase() : '';
+                if (baseName.length < 3) {
+                    baseName = (email ? email.split('@')[0].replace(/[^a-zA-Z0-9]/g, '').toLowerCase() : '') || 'user';
+                }
+                if (baseName.length < 3) {
+                    baseName = `user_${Date.now().toString().slice(-4)}`;
+                }
+                let username = baseName;
                 const existingUsername = await User.findOne({ username });
                 if (existingUsername) {
-                    username = `${username}${Date.now().toString().slice(-4)}`;
+                    username = `${username}_${Date.now().toString().slice(-4)}`;
                 }
 
                 user = await User.create({

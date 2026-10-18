@@ -17,6 +17,12 @@ axiosInstance.interceptors.request.use(
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
+
+    // If data is FormData, remove Content-Type so browser sets boundary automatically
+    if (config.data instanceof FormData) {
+      delete config.headers["Content-Type"];
+    }
+
     return config;
   },
   (error) => {
@@ -31,7 +37,12 @@ axiosInstance.interceptors.response.use(
   },
   (error) => {
     if (error.response) {
-      if (error.response.status === 401) {
+      const isAuthRoute =
+        error.config?.url?.includes("/api/auth/login") ||
+        error.config?.url?.includes("/api/auth/register") ||
+        error.config?.url?.includes("/api/auth/google");
+
+      if (error.response.status === 401 && !isAuthRoute) {
         // Token expired or invalid — clear session and redirect to homepage
         localStorage.removeItem("token");
         localStorage.removeItem("user");

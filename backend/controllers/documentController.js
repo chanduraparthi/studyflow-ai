@@ -14,11 +14,17 @@ import mongoose from "mongoose";
  */
 const uploadToCloudinary = (buffer, originalName) => {
     return new Promise((resolve, reject) => {
+        // Sanitize filename to prevent Cloudinary invalid public_id errors with spaces and special characters
+        const cleanName = (originalName || "document")
+            .replace(/\.[^/.]+$/, "")
+            .replace(/[^a-zA-Z0-9_-]/g, "_")
+            .slice(0, 50);
+
         const stream = getCloudinary().uploader.upload_stream(
             {
                 resource_type: "image",              // deliver PDFs via image pipeline (browser-viewable)
                 folder: "chandus_ai/documents",       // organized folder
-                public_id: `${Date.now()}-${originalName.replace(/\.[^/.]+$/, "")}`,
+                public_id: `${Date.now()}-${cleanName}`,
                 format: "pdf",
             },
             (error, result) => {

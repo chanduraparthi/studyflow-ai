@@ -27,7 +27,7 @@ const DocumentListPage = () => {
       const data = await documentService.getDocuments();
       setDocuments(data);
     } catch (error) {
-      toast.error(error.message || 'Failed to fetch documents');
+      toast.error(error.message || error.error || 'Failed to fetch documents');
     } finally {
       setLoading(false);
     }
@@ -40,6 +40,16 @@ const DocumentListPage = () => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      if (file.type && file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+        toast.error('Only PDF files are allowed');
+        e.target.value = '';
+        return;
+      }
+      if (file.size > 10 * 1024 * 1024) {
+        toast.error('File size exceeds the 10MB limit');
+        e.target.value = '';
+        return;
+      }
       setUploadFile(file);
       setUploadTitle(file.name.replace(/\.[^/.]+$/, ""));
     }
@@ -48,14 +58,19 @@ const DocumentListPage = () => {
   // Handle file upload
   const handleUpload = async (e) => {
     e.preventDefault();
-    if (!uploadFile || !uploadTitle) {
-      toast.error('Please select a file and enter a title');
+    if (!uploadFile || !uploadTitle.trim()) {
+      toast.error('Please select a PDF file and enter a title');
       return;
     }
+    if (uploadFile.size > 10 * 1024 * 1024) {
+      toast.error('File size exceeds 10MB limit');
+      return;
+    }
+
     setUploading(true);
     const formData = new FormData();
     formData.append('file', uploadFile);
-    formData.append('title', uploadTitle);
+    formData.append('title', uploadTitle.trim());
 
     try {
       await documentService.uploadDocument(formData);
@@ -66,7 +81,7 @@ const DocumentListPage = () => {
       setLoading(true);
       fetchDocuments();
     } catch (error) {
-      toast.error(error.message || 'Failed to upload document');
+      toast.error(error.message || error.error || 'Failed to upload document');
     } finally {
       setUploading(false);
     }
@@ -88,7 +103,7 @@ const DocumentListPage = () => {
       setSelectedDoc(null);
       setDocuments(documents.filter((doc) => doc._id !== selectedDoc._id));
     } catch (error) {
-      toast.error(error.message || 'Failed to delete document');
+      toast.error(error.message || error.error || 'Failed to delete document');
     } finally {
       setDeleting(false);
     }
