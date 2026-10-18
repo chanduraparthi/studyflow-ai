@@ -1,4 +1,6 @@
-export const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const rawBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+// Automatically clean trailing slashes and accidental trailing /api (since API_PATHS already start with /api)
+export const BASE_URL = rawBaseUrl.replace(/\/+$/, "").replace(/\/api$/, "");
 
 export const API_PATHS = {
     AUTH: {

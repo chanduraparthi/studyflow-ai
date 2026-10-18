@@ -62,26 +62,38 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Normalize incoming URLs (strip duplicate slashes and duplicate /api prefixes)
+app.use((req, res, next) => {
+  if (req.url.includes("//")) {
+    req.url = req.url.replace(/\/+/g, "/");
+  }
+  if (req.url.startsWith("/api/api/")) {
+    req.url = req.url.replace("/api/api/", "/api/");
+  }
+  next();
+});
 
 // Health check
-app.get('/', (req, res) => {
+app.get(['/', '/api'], (req, res) => {
   res.json({ success: true, message: "chandu's AI API is running" });
 });
 
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/documents', documentRoutes);
-app.use('/api/flashcards', flashcardRoutes);
-app.use('/api/ai', aiRoutes);
-app.use('/api/quizzes', quizRoutes);
-app.use('/api/progress', progressRoutes);
+// Routes — support both /api/... and direct /... for compatibility with all proxies and rewrites
+app.use(['/api/auth', '/auth'], authRoutes);
+app.use(['/api/documents', '/documents'], documentRoutes);
+app.use(['/api/flashcards', '/flashcards'], flashcardRoutes);
+app.use(['/api/ai', '/ai'], aiRoutes);
+app.use(['/api/quizzes', '/quizzes'], quizRoutes);
+app.use(['/api/progress', '/progress'], progressRoutes);
 
 
 // 404 handler
 app.use((req, res, next) => {
+  const attempted = req.originalUrl || req.url;
+  console.warn(`[404] Route not found: ${req.method} ${attempted}`);
   res.status(404).json({
     success: false,
-    error: "Route not found",
+    error: `Route not found: ${req.method} ${attempted}`,
     statusCode: 404
   });
 });
