@@ -22,7 +22,7 @@
 
 ---
 
-## 🌐 Live Demo - https://chandus-ai.vercel.app/
+## 🌐 Live Demo - [https://chandus-ai.vercel.app/](https://studyflow-ai-3heu-olzhvqp7o-chanduraparthis-projects.vercel.app/)
 ---
 
 ## ✨ Features
